@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('author', 150)->nullable();
-            $table->string('chunk')->nullable();
+            $table->tinyText('chunk')->nullable();
             $table->string('audio_url')->nullable();
             $table->string('file_path')->nullable();
             $table->foreignId('added_by')->nullable()->constrained('users')->nullOnDelete();
