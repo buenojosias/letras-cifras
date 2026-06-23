@@ -1,5 +1,5 @@
 <x-app-layout>
-    <x-card header="Welcome to the TallStackUI Starter Kit">
+    <x-ts-card header="Welcome to the TallStackUI Starter Kit">
         <div class="space-y-2">
             <p>
                 👋🏻 This is the TallStackUI starter kit for Laravel 12. With this TallStackUI starter kit you will be able to enjoy a ready-to-use application to initialize your next Laravel 12 project with TallStackUI.
@@ -25,8 +25,8 @@
         </div>
         <x-slot:footer>
             <span class="text-xs">
-                ⚠️ <x-link href="https://tallstackui.com/docs/v2/starter-kit" bold blank sm>Make sure to read the docs about the starter kit!</x-link>
+                ⚠️ <x-ts-link href="https://tallstackui.com/docs/v2/starter-kit" bold blank sm>Make sure to read the docs about the starter kit!</x-link>
             </span>
         </x-slot:footer>
-    </x-card>
+    </x-ts-card>
 </x-app-layout>

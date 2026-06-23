@@ -7,7 +7,7 @@
         @csrf
 
         <div class="space-y-4">
-            <x-ts-input label="E-mail *" type="email" name="email" :value="old('email', 'test@example.com')" required autofocus autocomplete="username" />
+            <x-ts-input label="E-mail *" type="email" name="email" :value="old('email', '')" required autofocus autocomplete="username" />
 
             <x-ts-password label="Senha *" type="password" name="password" required autocomplete="current-password" />
         </div>
