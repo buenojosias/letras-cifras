@@ -7,13 +7,13 @@
         @csrf
 
         <div class="space-y-4">
-            <x-input label="Email *" type="email" name="email" :value="old('email', 'test@example.com')" required autofocus autocomplete="username" />
+            <x-ts-input label="E-mail *" type="email" name="email" :value="old('email', 'test@example.com')" required autofocus autocomplete="username" />
 
-            <x-password label="Password *" type="password" name="password" required autocomplete="current-password" />
+            <x-ts-password label="Senha *" type="password" name="password" required autocomplete="current-password" />
         </div>
 
         <div class="block mt-4">
-            <x-checkbox label="Remember me" id="remember_me" type="checkbox" name="remember" />
+            <x-ts-checkbox label="Lembrar-me" id="remember_me" type="checkbox" name="remember" />
         </div>
 
         <div class="flex items-center justify-end mt-4">
@@ -23,7 +23,7 @@
                 </a>
             @endif
 
-            <x-button type="submit" class="ms-3">
+            <x-ts-button type="submit" class="ms-3">
                 {{ __('Log in') }}
             </x-button>
         </div>

@@ -7,19 +7,19 @@
         @csrf
 
         <div>
-            <x-input label="Name *" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            <x-ts-input label="Name *" name="name" :value="old('name')" required autofocus autocomplete="name" />
         </div>
 
         <div class="mt-4">
-            <x-input label="Email *" type="email" name="email" :value="old('email')" required autocomplete="username" />
+            <x-ts-input label="Email *" type="email" name="email" :value="old('email')" required autocomplete="username" />
         </div>
 
         <div class="mt-4">
-            <x-password label="Password *" name="password" required autocomplete="new-password" />
+            <x-ts-password label="Password *" name="password" required autocomplete="new-password" />
         </div>
 
         <div class="mt-4">
-            <x-password label="Confirm Password *" name="password_confirmation" required autocomplete="new-password" />
+            <x-ts-password label="Confirm Password *" name="password_confirmation" required autocomplete="new-password" />
         </div>
 
         <div class="flex items-center justify-end mt-4">
@@ -27,7 +27,7 @@
                 {{ __('Already registered?') }}
             </a>
 
-            <x-button type="submit" class="ms-4">
+            <x-ts-button type="submit" class="ms-4">
                 {{ __('Register') }}
             </x-button>
         </div>
