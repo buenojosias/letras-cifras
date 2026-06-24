@@ -19,7 +19,6 @@ return new class extends Migration
             $table->dateTime('datetime');
             $table->string('liturgical_year')->nullable(); // A, B, C
             $table->string('theme')->nullable();
-
             $table->longText('readings_text')->nullable();
             $table->timestamps();
         });

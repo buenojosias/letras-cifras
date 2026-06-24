@@ -4,17 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Lyrics extends Model
 {
+    use SoftDeletes;
+    
     protected $fillable = [
+        'user_id',
         'song_id',
         'content',
         'version_name',
         'is_default',
         'revised',
         'flagged',
-        'added_by',
     ];
 
     protected function casts(): array
@@ -33,6 +36,6 @@ class Lyrics extends Model
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'added_by');
+        return $this->belongsTo(User::class);
     }
 }

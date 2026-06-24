@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('songs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
             $table->string('title');
             $table->string('author', 150)->nullable();
             $table->tinyText('chunk')->nullable();
             $table->string('audio_url')->nullable();
             $table->string('file_path')->nullable();
-            $table->foreignId('added_by')->nullable()->constrained('users')->nullOnDelete();
             $table->boolean('accepted')->default(false);
 
             // IA
@@ -27,6 +27,7 @@ return new class extends Migration
             $table->timestamp('summary_generated_at')->nullable();
             $table->string('summary_model', 30)->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

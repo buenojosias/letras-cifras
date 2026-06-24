@@ -14,6 +14,7 @@ return new class extends Migration
     {
         Schema::create('mass_embeddings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('mass_id')->constrained()->cascadeOnDelete();
             $table->string('model', 50);
             $table->vector('embedding', 1536);
             $table->timestamps();

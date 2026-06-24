@@ -13,14 +13,15 @@ return new class extends Migration
     {
         Schema::create('lyrics', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignId('song_id')->constrained()->cascadeOnDelete();
             $table->text('content');
             $table->string('version_name')->nullable();
             $table->boolean('is_default')->default(true);
             $table->boolean('revised')->default(false);
             $table->boolean('flagged')->default(false);
-            $table->foreignId('added_by')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

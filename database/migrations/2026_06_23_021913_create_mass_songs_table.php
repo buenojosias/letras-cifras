@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('mass_songs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('mass_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('song_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('moment_id')->constrained()->cascadeOnDelete();
+            $table->string('tone')->nullable();
+            $table->integer('position')->default(0);
             $table->timestamps();
         });
     }

@@ -27,6 +27,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_active',
         'is_admin',
     ];
 
@@ -40,6 +41,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'is_active' => 'boolean',
             'is_admin' => 'boolean',
         ];
     }
@@ -51,16 +53,16 @@ class User extends Authenticatable
 
     public function songs(): HasMany
     {
-        return $this->hasMany(Song::class, 'added_by');
+        return $this->hasMany(Song::class);
     }
 
     public function lyrics(): HasMany
     {
-        return $this->hasMany(Lyrics::class, 'added_by');
+        return $this->hasMany(Lyrics::class);
     }
 
     public function chords(): HasMany
     {
-        return $this->hasMany(Chord::class, 'added_by');
+        return $this->hasMany(Chord::class);
     }
 }
